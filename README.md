@@ -1,11 +1,11 @@
-# 📘 Bethunter API
+# Bethunter API
 
 API desenvolvida em **Java Spring Boot** para um aplicativo mobile de **educação financeira com gamificação**.  
 O sistema oferece **aulas**, **tópicos de aprendizado**, **quiz de perguntas e alternativas**, além de mecânicas de **gamificação** como pontos, moedas virtuais e uma **roleta de recompensas**.
 
 ---
 
-## 🚀 Tecnologias
+## Tecnologias
 
 - Java 17+
 - Spring Boot 3.x
@@ -16,7 +16,7 @@ O sistema oferece **aulas**, **tópicos de aprendizado**, **quiz de perguntas e 
 
 ---
 
-## ⚙️ Configuração do Projeto
+## Configuração do Projeto
 
 ### 1. Pré-requisitos
 - [Java 17](https://adoptium.net/)
@@ -51,19 +51,19 @@ mvn spring-boot:run
 ```
 
 A API estará disponível em:  
-👉 `http://localhost:8080`
+`http://localhost:8080`
 
 ---
 
-## 📖 Endpoints Principais
+## Endpoints Principais
 
-### 🔑 Autenticação
+### Autenticação
 **Login**
 ```http
 POST /auth/login
 ```
 
-📤 **Request**
+**Request**
 ```json
 {
   "email": "user@email.com",
@@ -71,7 +71,7 @@ POST /auth/login
 }
 ```
 
-📥 **Response**
+**Response**
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR..."
@@ -80,13 +80,13 @@ POST /auth/login
 
 ---
 
-### 👤 Usuários
+### Usuários
 **Buscar usuário por ID**
 ```http
 GET /users/{id}
 ```
 
-📥 **Response**
+ **Response**
 ```json
 {
   "id": "123",
@@ -103,7 +103,7 @@ GET /users/{id}
 PUT /users/{id}
 ```
 
-📤 **Request**
+**Request**
 ```json
 {
   "email": "new@email.com",
@@ -114,7 +114,7 @@ PUT /users/{id}
 }
 ```
 
-📥 **Response**
+ **Response**
 ```json
 {
   "id": "123",
@@ -128,20 +128,20 @@ PUT /users/{id}
 
 ---
 
-### 📚 Aulas
+### Aulas
 **Criar aula**
 ```http
 POST /lessons
 ```
 
-📤 **Request**
+**Request**
 ```json
 {
   "title": "Introdução à Educação Financeira"
 }
 ```
 
-📥 **Response**
+ **Response**
 ```json
 {
   "id": "1",
@@ -154,7 +154,7 @@ POST /lessons
 GET /lessons
 ```
 
-📥 **Response**
+**Response**
 ```json
 [
   {
@@ -170,14 +170,14 @@ GET /lessons
 
 ---
 
-### 🎮 Roleta de Recompensas
+### Roleta de Recompensas
 **Girar a roleta**
 ```http
 GET /users/roulete
 Authorization: Bearer <token>
 ```
 
-📥 **Response**
+ **Response**
 ```json
 {
   "reward": 15.00
@@ -186,7 +186,7 @@ Authorization: Bearer <token>
 
 ---
 
-## 🛠️ Erros e Exceções
+##  Erros e Exceções
 
 - **401 Unauthorized** → Token inválido ou ausente  
 - **404 Not Found** → Recurso não encontrado  
@@ -203,7 +203,7 @@ Exemplo:
 
 ---
 
-## 📄 Licença
+## Licença
 Este projeto está sob a licença MIT.
 MIT License
 
