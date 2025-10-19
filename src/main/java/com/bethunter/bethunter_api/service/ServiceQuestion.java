@@ -44,9 +44,6 @@ public class ServiceQuestion {
     @Autowired
     private QuestionMapper questionMapper;
 
-    @Autowired
-    private AlternativeMapper alternativeMapper;
-
     public QuestionResponse createQuestion(QuestionRequestCreate dto) {
         return repositoryTopic.findById(dto.id_topic())
                 .map(topic -> {

@@ -4,6 +4,8 @@ import com.bethunter.bethunter_api.dto.alternative.AlternativeRequestCreate;
 import com.bethunter.bethunter_api.dto.alternative.AlternativeRequestUpdate;
 import com.bethunter.bethunter_api.dto.alternative.AlternativeResponse;
 import com.bethunter.bethunter_api.service.ServiceAlternative;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,16 +19,22 @@ public class ControllerAlternative {
     @Autowired
     private ServiceAlternative serviceAlternative;
 
+    @Operation(summary = "Create a new alternative")
+    @ApiResponse(responseCode = "201", description = "Created")
     @PostMapping
     public ResponseEntity<AlternativeResponse> createAlternative(@RequestBody AlternativeRequestCreate dto) {
         return ResponseEntity.status(201).body(serviceAlternative.createAlternative(dto));
     }
 
+    @Operation(summary = "Find all alternatives in the database")
+    @ApiResponse(responseCode = "200", description = "Found all")
     @GetMapping
     public ResponseEntity<List<AlternativeResponse>> findAll() {
         return ResponseEntity.ok(serviceAlternative.findAll());
     }
 
+    @Operation(summary = "Find an alternative by his id in the database")
+    @ApiResponse(responseCode = "200", description = "Found")
     @GetMapping("{id}")
     public ResponseEntity<AlternativeResponse> findById(@PathVariable String id) {
         return serviceAlternative.findById(id)

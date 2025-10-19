@@ -29,7 +29,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(AlternativeNotFound.class)
-    private ResponseEntity<RestErrorMessage> AlternativeNotFoundHandler(QuestionNotFound exception) {
+    private ResponseEntity<RestErrorMessage> AlternativeNotFoundHandler(AlternativeNotFound exception) {
+        RestErrorMessage threatResponse = new RestErrorMessage(HttpStatus.NOT_FOUND, exception.getMessage());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(threatResponse);
+    }
+
+    @ExceptionHandler(AccountNotFound.class)
+    private ResponseEntity<RestErrorMessage> AccountNotFoundHandler(AccountNotFound exception) {
         RestErrorMessage threatResponse = new RestErrorMessage(HttpStatus.NOT_FOUND, exception.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(threatResponse);
     }
